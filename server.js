@@ -10,13 +10,13 @@ app.post('/convert', (req, res) => {
     let arr =[]; //empty array we push the appended objects to
     
     for( var i=0; i< s.length; i++){ 
-        var sexx = ["M", "F"];
-        var MorF = Math.floor(Math.random()*sexx.length); //this makes it possible to randomly get either male or female
+        var gender = ["M", "F"];
+        var randomGender = Math.floor(Math.random()*gender.length); //this makes it possible to randomly get either male or female
 
         let value = { //this appends everything i want
             "userId": s[i],
-            "age": JSON.stringify(Math.floor(Math.random() * 25) + 20 ),
-            "sex": sexx[MorF]
+            "age": Math.floor(Math.random() * 25) + 20 ,
+            "sex": gender[randomGender]
         };
         arr.push(value);
     }
